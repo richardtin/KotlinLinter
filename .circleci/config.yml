@@ -6,12 +6,14 @@ jobs:
       - image: circleci/android:api-29
     steps:
       - checkout
+      - run: chmod +x ./gradlew
       - run: ./gradlew assemble
   test:
     docker:
       - image: circleci/android:api-29
     steps:
       - checkout
+      - run: chmod +x ./gradlew
       - run: ./gradlew test
 workflows:
   version: 2
